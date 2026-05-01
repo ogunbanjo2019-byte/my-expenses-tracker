@@ -5,7 +5,15 @@ const descriptionInput = document.getElementById('desc');
 const amountInput = document.getElementById('amount');
 const categoryInput = document.getElementById('category');
 
-const API_URL = 'http://localhost:5000/api/expenses';
+const API_URL = "https://my-expenses-tracker-9uhz.onrender.com/api/expenses";
+
+fetch(API_URL)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  })
+  
+  .catch(err => console.error("Error:", err));
 
 const getExpenses = () => {
     fetch(API_URL)
